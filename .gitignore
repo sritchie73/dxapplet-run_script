@@ -1,0 +1,7 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+resources/usr/bin/
+resources/usr/lib/
+*.Rproj
