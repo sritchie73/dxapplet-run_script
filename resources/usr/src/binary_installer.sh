@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Intended to be run on the local machine where the app is built
+mkdir -p ../bin
 
 wget https://github.com/dnanexus/dxfuse/releases/download/v1.6.1/dxfuse-linux
 chmod +x dxfuse-linux

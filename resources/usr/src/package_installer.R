@@ -22,6 +22,7 @@ BiocManager::install(c(
 ))
 
 remotes::install_github('erocoar/gghalves')
+remotes::install_github('sritchie73/dxutils')
 
 pkgdir <- sprintf("R/x86_64-pc-linux-gnu-library/%s.%s/", R.version$major, gsub("\\.[0-9]", "", R.version$minor))
 
