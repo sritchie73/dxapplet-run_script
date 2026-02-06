@@ -1,9 +1,9 @@
 #!/bin/Rscript
 
-# N.b. needs to be run on the run_script workstation to make sure compiled 
+# N.b. needs to be run on the run_script workstation to make sure compiled
 # packages are installed correctly
 #
-# An interactive run_script workstation can be spun up by running 
+# An interactive run_script workstation can be spun up by running
 # dx run run_script -icmd='while true; do sleep 10; done' -iscript='' --ssh -y
 #
 install.packages(c(
@@ -11,7 +11,7 @@ install.packages(c(
  "bit64", "Rcpp", "RcppArmadillo", "RcppEigen", "tidyverse", "devtools", "qrng",
  "MendelianRandomization","susieR", "epiR", "coloc", "incidence", "prevalence",
  "mvtnorm", "outbreaks", "odbc", "docopt", "patchwork", "cowplot", "openxlsx",
- "RNOmni", "pROC", "ggforce", "ggh4x", "ggpp", "ggrastr", "ggstance", "ggthemes", 
+ "RNOmni", "pROC", "ggforce", "ggh4x", "ggpp", "ggrastr", "ggstance", "ggthemes",
  "palettetown", "caret", "NetRep", "ukbnmr", "readstata13", "nricens", "hexbin",
  "microbenchmark", "flashClust", "bigstatsr", "bigsnpr", "Rmpfr", "lme4", "lemon",
  "txtplot", "munsell", "medflex", "olsrr", "expss"
@@ -22,7 +22,6 @@ BiocManager::install(c(
 ))
 
 remotes::install_github('erocoar/gghalves')
-remotes::install_github('sritchie73/dxutils')
 
 pkgdir <- sprintf("R/x86_64-pc-linux-gnu-library/%s.%s/", R.version$major, gsub("\\.[0-9]", "", R.version$minor))
 

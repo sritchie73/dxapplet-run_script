@@ -28,8 +28,13 @@ main() {
     sudo tar -xzf /usr/lib/R/site-library/Rpackages.tar.gz -C /usr/lib/R/site-library
     sudo rm -f /usr/lib/R/site-library/Rpackages.tar.gz
 
-    # Create user library
+    # Create user library - remotes::install_github won't do this unlike install.packages
     Rscript -e 'system(sprintf("mkdir -p R/x86_64-pc-linux-gnu-library/%s.%s/", R.version$major, gsub("\\\\.[0-9]", "", R.version$minor)))'
+
+    # Install 'dxutils' R package - we do this each time we load instead of
+    # prebundling because the package is very much in beta, likely to update,
+    # and is lightweight to install
+    Rscript -e "remotes::install_github('sritchie73/dxutils')"
 
     # Install nextflow
     echo "Installing nextflow..."
