@@ -29,7 +29,8 @@ main() {
     sudo rm -f /usr/lib/R/site-library/Rpackages.tar.gz
 
     # Create user library - remotes::install_github won't do this unlike install.packages
-    Rscript -e 'system(sprintf("mkdir -p R/x86_64-pc-linux-gnu-library/%s.%s/", R.version$major, gsub("\\\\.[0-9]", "", R.version$minor)))'
+    Rscript -e 'system(sprintf("mkdir -p R/x86_64-pc-linux-gnu-library/%s.%s/", R.version$major, gsub("\\.[0-9]", "", R.version$minor)))'
+    chmod -R +rwx R/
 
     # Install 'dxutils' R package - we do this each time we load instead of
     # prebundling because the package is very much in beta, likely to update,
