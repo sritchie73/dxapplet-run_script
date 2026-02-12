@@ -4,7 +4,8 @@ main() {
 
     # Set user-specified environment variables
     for uenv in ${env[@]}; do
-      export $uenv
+      echo export $uenv >> $HOME/.bashrc
+      source $HOME/.bashrc
     done
 
     # Mount project storage to /mnt/project with dxfuse
