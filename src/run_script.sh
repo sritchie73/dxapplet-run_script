@@ -31,13 +31,15 @@ main() {
 
     # Create user library - remotes::install_github won't do this unlike install.packages
     Rscript -e 'system(sprintf("mkdir -p R/x86_64-pc-linux-gnu-library/%s.%s/", R.version$major, gsub("\\.[0-9]", "", R.version$minor)))'
-    chgrp -R dnanexus R/
-    chmod -R 775 R/
 
     # Install 'dxutils' R package - we do this each time we load instead of
     # prebundling because the package is very much in beta, likely to update,
     # and is lightweight to install
     Rscript -e "remotes::install_github('sritchie73/dxutils')"
+
+    # Make sure permissions allow user to install R packages to local directory
+    chgrp -R dnanexus R/
+    chmod -R 775 R/
 
     # Install nextflow
     echo "Installing nextflow..."
