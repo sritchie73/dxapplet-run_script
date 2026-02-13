@@ -4,8 +4,8 @@ main() {
 
     # Set user-specified environment variables
     for uenv in ${env[@]}; do
-      echo export $uenv >> $HOME/.bashrc
-      source $HOME/.bashrc
+      export $uenv # main session
+      echo export $uenv >> $HOME/.bashrc # additional byobu windows if --allow-ssh
     done
 
     # Mount project storage to /mnt/project with dxfuse
