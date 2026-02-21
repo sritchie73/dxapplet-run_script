@@ -39,6 +39,7 @@
     "version": "0",
     "execDepends": [
       {"name": "default-jre"},
+      {"name": "libopenblas-dev"},
       {"name": "libssl-dev"},
       {"name": "libxml2-dev"},
       {"name": "libfontconfig1-dev"},
@@ -51,7 +52,7 @@
       {"name": "libgdal-dev"},
       {"name": "libmpfr-dev"},
       {"name": "jags"}
-    ]  
+    ]
   },
   "access": {
     "network": [
