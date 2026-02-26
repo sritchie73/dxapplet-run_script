@@ -68,6 +68,13 @@
           "instanceType": "mem1_ssd1_v2_x4"
         }
       }
+    },
+    "azure:uksouth-ofh": {
+      "systemRequirements": {
+        "*": {
+          "instanceType": "azure:mem2_ssd1_v2_x4"
+        }
+      }
     }
   },
   "ignoreReuse": true
