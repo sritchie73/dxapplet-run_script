@@ -44,11 +44,15 @@ main() {
     # Install nextflow
     echo "Installing nextflow..."
     curl -s https://get.nextflow.io | bash
+    chgrp dnanexus nextflow
+    chgrp -R dnanexus .nextflow/
+    chmod -R 775 .nextflow/
     sudo mv nextflow /usr/local/bin/
 
     # Download the user supplied script and run it (or the command supplied)
     dx download "$script"
-    chmod +x $script_name
+    chgrp dnanexus $script_name
+    chmod 775 $script_name
 
     if [[ "$cmd" != "" ]]; then
       echo "Running user supplied command..."
